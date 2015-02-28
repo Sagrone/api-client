@@ -1,4 +1,4 @@
-# Ignore bundle configs
 .bundle
 bin
 vendor/bundle
+Gemfile.lock
