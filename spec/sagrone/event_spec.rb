@@ -51,4 +51,31 @@ RSpec.describe Sagrone::Event do
       expect(last_event.description).to eq('Description 3')
     end
   end
+
+  describe 'create an event' do
+    it 'should create an event' do
+      stub_api_for(Sagrone::Event) do |stub|
+        event = get_json_response_file('event')
+        stub.post('/events') { |env| [201, {}, event] }
+      end
+
+      event = Sagrone::Event.create(title: 'Title 1', description: 'Description 1')
+
+      expect(event.title).to eq('Title 1')
+      expect(event.description).to eq('Description 1')
+    end
+
+    it 'should validate fields when calling valid?' do
+      event = Sagrone::Event.new
+
+      expect(event.valid?).to_not be
+      expect(event.errors.full_messages).to include("Title can't be blank")
+      expect(event.errors.full_messages).to include("Description can't be blank")
+
+      event.title = 'Title 1'
+      event.description = 'Description 1'
+
+      expect(event.valid?).to be
+    end
+  end
 end
