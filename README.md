@@ -2,27 +2,50 @@
 
 [![Build Status](https://travis-ci.org/Sagrone/api-client.svg?branch=master)](https://travis-ci.org/Sagrone/api-client)
 
-This is the Ruby Client for Sagrone API. It exposes Ruby objects to interact with the API.
+This is the Ruby Client for [Sagrone API](https://github.com/Sagrone/api). It exposes Ruby objects to interact with the API.
 
 ## Installation
+
+_Note: Both API and client are work-in-progress. Gem can be used from master branch._
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sagrone'
+gem 'sagrone', github: 'Sagrone/api-client'
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install sagrone
-
 ## Usage
 
-TODO: Write usage instructions here
+First, you must configure `Sagrone.client`:
+
+```ruby
+Sagrone.client.configure do |c|
+  c.url = 'http://localhost:3100/v1'
+end
+```
+
+Then you will be able to:
+
+```ruby
+event = Sagrone::Event.create(title: 'MilanoJS', description: 'The DOM of Milan.')
+=> #<Sagrone::Event(events/54f2492747696c269b010000) title="MilanoJS" description="The DOM of Milan." id="54f2492747696c269b010000">
+
+Sagrone::Event.all.count
+=> 1
+
+Sagrone::Event.find('54f2492747696c269b010000')
+=> #<Sagrone::Event(events/54f2492747696c269b010000) title="MilanoJS" description="The DOM of Milan." id="54f2492747696c269b010000">
+```
+
+## Modules
+
+* `Sagrone::Event`
+
+The API wrapper is powered by [Her](https://github.com/remiprev/her), so most of [its documentation](https://github.com/remiprev/her#activerecord-like-methods) will be helpful.
 
 ## Contributing
 
