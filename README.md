@@ -47,6 +47,20 @@ Sagrone::Event.find('54f2492747696c269b010000')
 
 The API wrapper is powered by [Her](https://github.com/remiprev/her), so most of [its documentation](https://github.com/remiprev/her#activerecord-like-methods) will be helpful.
 
+## Development
+
+First setup your gem dependencies:
+
+    bundle install
+
+To run tests:
+
+    rspec
+
+To open a console with this library loaded:
+
+    rake console
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/sagrone/fork )
