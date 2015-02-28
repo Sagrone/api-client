@@ -54,15 +54,17 @@ RSpec.describe Sagrone::Event do
 
   describe 'create an event' do
     it 'should create an event' do
+      event = get_json_response_file('event')
+
       stub_api_for(Sagrone::Event) do |stub|
-        event = get_json_response_file('event')
         stub.post('/events') { |env| [201, {}, event] }
       end
 
-      event = Sagrone::Event.create(title: 'Title 1', description: 'Description 1')
+      created_event = Sagrone::Event.create(MultiJson.load(event))
 
-      expect(event.title).to eq('Title 1')
-      expect(event.description).to eq('Description 1')
+      expect(created_event.id).to eq('54f232b947696c1fcd000000')
+      expect(created_event.title).to eq('Title 1')
+      expect(created_event.description).to eq('Description 1')
     end
 
     it 'should validate fields when calling valid?' do
