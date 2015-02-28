@@ -10,6 +10,7 @@ This is the Ruby Client for [Sagrone API](https://github.com/Sagrone/api). It ex
 - [Usage](#usage)
 - [Modules](#modules)
 - [Development](#development)
+- [Changelog](/CHANGELOG.md)
 - [Contributing](#contributing)
 - [License](#license)
 
