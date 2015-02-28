@@ -12,4 +12,12 @@ RSpec.describe Sagrone::Client do
     expect(client.url).to eq 'http://api.sagrone/v1'
     expect(client.api.base_uri).to eq 'http://api.sagrone/v1'
   end
+
+  it 'should have a configurable url' do
+    client.configure do |c|
+      c.url = 'http://different-endpoint'
+    end
+
+    expect(client.api.base_uri).to eq 'http://different-endpoint'
+  end
 end
