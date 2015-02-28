@@ -1,5 +1,7 @@
 # Sagrone API Client
 
+[![Build Status](https://travis-ci.org/Sagrone/api-client.svg?branch=master)](https://travis-ci.org/Sagrone/api-client)
+
 This is the Ruby Client for Sagrone API. It exposes Ruby objects to interact with the API.
 
 ## Installation
