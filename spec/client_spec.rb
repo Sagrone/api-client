@@ -8,6 +8,8 @@ RSpec.describe Sagrone::Client do
       c.url = 'http://api.sagrone/v1'
     end
 
+    expect(client.api).to be_a(Her::API)
     expect(client.url).to eq 'http://api.sagrone/v1'
+    expect(client.api.base_uri).to eq 'http://api.sagrone/v1'
   end
 end
