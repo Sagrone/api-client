@@ -1,0 +1,19 @@
+{
+  "events": [
+    {
+      "id": "54f232b947696c1fcd000000",
+      "title": "Title 1",
+      "description": "Description 1"
+    },
+    {
+      "id": "54f2331e47696c2006000000",
+      "title": "Title 2",
+      "description": "Description 2"
+    },
+    {
+      "id": "54f236ba47696c269b000000",
+      "title": "Title 3",
+      "description": "Description 3"
+    }
+  ]
+}

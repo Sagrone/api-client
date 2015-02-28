@@ -4,6 +4,7 @@ require "her"
 
 require "sagrone/client"
 require "sagrone/base"
+require "sagrone/event"
 
 module Sagrone
   def self.client
