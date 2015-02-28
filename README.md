@@ -4,6 +4,15 @@
 
 This is the Ruby Client for [Sagrone API](https://github.com/Sagrone/api). It exposes Ruby objects to interact with the API.
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Modules](#modules)
+- [Development](#development)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Installation
 
 _Note: Both API and client are work-in-progress. Gem can be used from master branch._
