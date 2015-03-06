@@ -69,7 +69,7 @@ To run tests:
 
 To open a console with this library loaded:
 
-    rake console
+    bundle console
 
 ## Contributing
 
