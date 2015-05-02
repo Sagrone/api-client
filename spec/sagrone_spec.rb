@@ -8,8 +8,20 @@ RSpec.describe Sagrone do
   end
 
   describe '.client_api' do
-    it 'should be a Her::API' do
-      expect(Sagrone.client_api).to be_a(Her::API)
+    it 'should be nil' do
+      expect(Sagrone.client_api).to be_nil
+    end
+
+    context 'client configured' do
+      before do
+        Sagrone.client.configure do |c|
+          c.url = 'http://example.com'
+        end
+      end
+
+      it 'should be a Her::API' do
+        expect(Sagrone.client_api).to be_a(Her::API)
+      end
     end
   end
 end
