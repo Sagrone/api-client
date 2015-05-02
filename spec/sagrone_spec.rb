@@ -1,13 +1,13 @@
 require 'spec_helper'
 
 RSpec.describe Sagrone do
-  describe '.client' do
+  describe 'self.client' do
     it 'should fetch a client' do
       expect(Sagrone.client).to be_a(Sagrone::Client)
     end
   end
 
-  describe '.client_api' do
+  describe 'self.client_api' do
     context 'with client configured' do
       before do
         Sagrone.client.configure do |c|
