@@ -8,11 +8,7 @@ RSpec.describe Sagrone do
   end
 
   describe '.client_api' do
-    it 'should be nil' do
-      expect(Sagrone.client_api).to be_nil
-    end
-
-    context 'client configured' do
+    context 'with client configured' do
       before do
         Sagrone.client.configure do |c|
           c.url = 'http://example.com'
