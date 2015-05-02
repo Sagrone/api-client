@@ -10,4 +10,8 @@ module Sagrone
   def self.client
     Client.instance
   end
+
+  def self.client_api
+    client.api
+  end
 end

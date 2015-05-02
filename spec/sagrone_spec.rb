@@ -6,4 +6,10 @@ RSpec.describe Sagrone do
       expect(Sagrone.client).to be_a(Sagrone::Client)
     end
   end
+
+  describe '.client_api' do
+    it 'should be a Her::API' do
+      expect(Sagrone.client_api).to be_a(Her::API)
+    end
+  end
 end
